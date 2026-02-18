@@ -1,0 +1,193 @@
+.main-content {
+    height: auto;
+    width: 100%;
+    padding: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* background-color: blueviolet; */
+    gap: 16px;
+}
+
+.main-content-box {
+    padding: 2%;
+    font-size: 4vw;
+    /* background-color: #3DDC84; */
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.main-content-box i {
+    /* padding: 2%; */
+    font-size: 6rem;
+}
+
+/* Color Change By Hover Of Icone in Main */
+.fa-android:hover {
+    color: #3DDC84;
+}
+
+.fa-js:hover {
+    color: yellow;
+    background-color: black;
+}
+
+.fa-java:hover {
+    background: linear-gradient(180deg, #e3300c, rgb(214, 104, 7));
+    background-clip: text;
+    color: transparent;
+    /* color: #e3300c; */
+}
+
+.fa-node-js:hover {
+    color: #026a09;
+}
+
+.fa-python:hover {
+    color: rgb(15, 108, 214)
+}
+
+.fa-database:hover {
+    color: rgb(13, 67, 129)
+}
+
+/*END*/
+.fab:hover,
+#database:hover {
+    /* transform: scale(1.6); */
+    /* transform: translate(0, -12px); */
+    transform: scale(1.2) translate(0, -12px);
+    transition: all 0.5s ease;
+    /* transition: all 1.3s ease; */
+}
+
+.main-content-box-p {
+    font-size: clamp(0.9rem, 0.2vw, 2rem);
+    text-align: center;
+    padding: 2%;
+    margin-top: 13px;
+    opacity: 0;
+    transform: scale(0.8) translate(0, -12px);
+    transition: all 0.5s ease;
+}
+
+.main-content-box-p-animation {
+    opacity: 1;
+    transform: scale(1.6) translate(0, 12px);
+    transition: all 0.5s ease;
+}
+
+
+.hero-btn button {
+    transform: translate(0, -12px);
+    transition: all 0.5s ease;
+}
+
+
+/* projects-section */
+.project-section {
+    background-color: rgb(28, 25, 25);
+    width: 100%;
+}
+
+
+
+.project-title samp {
+    font-weight: 600;
+}
+
+.project-title h2 {
+    font-size: 2rem;
+    text-decoration: none;
+    margin-bottom: 23px;
+}
+
+.project-title p {
+    letter-spacing: 2px;
+}
+
+.projects-cards-container {
+    padding: 4rem 6rem;
+    /* background-color: #111; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 23px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    /* background: #111; */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 0.2px solid whitesmoke;
+}
+
+.card-img {
+    width: 100%;
+    height: 280px; 
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.card-text{
+    height: 150px;
+    padding: 1.6rem 2.3rem;
+}
+
+.card-text h3{
+    font-size: 1.2rem;
+}
+
+.card-text p{
+    font-size: 0.9rem;
+    margin-top: 13px;
+}
+
+@media (max-width : 1000px) {
+    .projects-cards-container{
+        flex-direction: column;
+    }
+    .card{
+        width: 100%;
+        height: auto;
+    }
+    .card-img img{
+        height: auto;
+        width: 100%;
+    }
+}
+@media (max-width : 600px) {
+    .projects-cards-container{
+        padding: 2rem 1.6rem;
+    }
+}
+
+
+
+
+
+/* .about-section h2,h2, h3, h4, p{
+    margin-top: 23px;
+    text-align: center;
+}  */
+
+
+
+/* .fa-figma{
+    flex: 2;
+} */

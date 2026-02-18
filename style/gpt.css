@@ -1,0 +1,162 @@
+:root {
+  --blur: 18px;
+  --radius: 18px;
+  --transition: all 0.45s ease;
+}
+
+/* ===== THEMES ===== */
+body[data-theme="dark"] {
+  --bg: #000;
+  --glass: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.15);
+  --text: #fff;
+  --glow: rgba(255,255,255,0.25);
+}
+
+body[data-theme="light"] {
+  --bg: #f3f3f3;
+  --glass: rgba(0,0,0,0.06);
+  --border: rgba(0,0,0,0.12);
+  --text: #000;
+  --glow: rgba(0,0,0,0.15);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  transition: var(--transition);
+}
+
+/* ===== NAV ===== */
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: var(--glass);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.button-nav button {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 10%;
+  gap: 3rem;
+  transition: var(--transition);
+}
+
+.hero-contener-text {
+  max-width: 520px;
+}
+
+/* ===== BLACK MIRROR CARD ===== */
+.hero-contener-text {
+  background: linear-gradient(135deg, var(--glass), transparent);
+  backdrop-filter: blur(var(--blur));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: 0 0 30px var(--glow);
+  position: relative;
+  transition: var(--transition);
+}
+
+/* Reflection */
+.hero-contener-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  height: 100%;
+  background: inherit;
+  transform: scaleY(-1);
+  filter: blur(6px) opacity(0.35);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+}
+
+/* ===== BUTTONS ===== */
+.hero-btn {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-btn button {
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--glass);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hero-btn button:hover {
+  box-shadow: 0 0 12px var(--glow);
+}
+
+/* ===== RING AREA ===== */
+.ring {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  animation: spin 12s linear infinite;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  color: var(--text);
+}
+
+/* Place icons in circle */
+.icon:nth-child(2) { top: 0; left: 50%; transform: translateX(-50%); }
+.icon:nth-child(3) { top: 25%; right: 0; }
+.icon:nth-child(4) { top: 60%; right: 10%; }
+.icon:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); }
+.icon:nth-child(6) { top: 60%; left: 10%; }
+.icon:nth-child(7) { top: 25%; left: 0; }
+.icon:nth-child(8) { top: 10%; right: 25%; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
